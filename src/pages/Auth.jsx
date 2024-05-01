@@ -1,13 +1,47 @@
 import React, { useState } from 'react'
-import './auth.css'
+import { useNavigate } from 'react-router-dom'
+import { useUser } from '../UserContext'
+import './styles/auth.css'
 
 const Auth = () => {
-    // State to toggle between forms
-    const [activeTab, setActiveTab] = useState('signin'); // 'signin' or 'signup'
+    const [activeTab, setActiveTab] = useState('signin');
+    const { setUser } = useUser(); // Use setUser from context
+    const navigate = useNavigate();
 
     // Function to switch tabs
     const handleTabSwitch = (tab) => {
         setActiveTab(tab);
+    };
+
+    const handleSignUp = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const userData = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            password: formData.get('password'), // Never store passwords in localStorage in real apps
+        };
+
+        // Simulate storing to a backend
+        localStorage.setItem(userData.email, JSON.stringify(userData));
+        setUser(userData); // Set user in context
+        navigate('/'); // Navigate to home
+    };
+
+    const handleSignIn = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const email = formData.get('email');
+        const password = formData.get('password');
+        const userData = JSON.parse(localStorage.getItem(email));
+
+        if (userData && userData.password === password) {
+            setUser(userData); // Set user in context
+            navigate('/'); // Navigate to home
+        } else {
+            alert('Invalid credentials or user does not exist');
+        }
     };
 
     return (
@@ -38,9 +72,9 @@ const Auth = () => {
                     <div className='tab-content'>
                         <h2>Sign In</h2>
                         {/* Sign In Form */}
-                        <form className='auth-form'>
-                            <input className='text-input' type="email" placeholder="Email" required />
-                            <input className='text-input' type="password" placeholder="Password" required />
+                        <form className='auth-form' onSubmit={activeTab === 'signin' ? handleSignIn : handleSignUp}>
+                            <input className='text-input' name='email' type="email" placeholder="Email" required />
+                            <input className='text-input' name='password' type="password" placeholder="Password" required />
                             <button className='submit-btn' type="submit">Sign In</button>
                         </form>
                         <span>Don't have an account? Sign Up</span>
@@ -49,12 +83,12 @@ const Auth = () => {
                     <div className='tab-content'>
                         <h2>Sign Up</h2>
                         {/* Sign Up Form */}
-                        <form className='auth-form'>
-                            <input className='text-input' type="text" placeholder="First Name" required />
-                            <input className='text-input' type="text" placeholder="Last Name" required />
-                            <input className='text-input' type="email" placeholder="Email" required />
-                            <input className='text-input' type="password" placeholder="Password" required />
-                            <input className='text-input' type="password" placeholder="Confirm Password" required />
+                        <form className='auth-form' onSubmit={activeTab === 'signin' ? handleSignIn : handleSignUp}>
+                            <input className='text-input' name='firstName' type="text" placeholder="First Name" required />
+                            <input className='text-input' name='lastName' type="text" placeholder="Last Name" required />
+                            <input className='text-input' name='email' type="email" placeholder="Email" required />
+                            <input className='text-input' name='password' type="password" placeholder="Password" required />
+                            <input className='text-input' name='password' type="password" placeholder="Confirm Password" required />
                             <button className='submit-btn' type="submit">Sign Up</button>
                         </form>
                         <span>Have an account? Sign In</span>

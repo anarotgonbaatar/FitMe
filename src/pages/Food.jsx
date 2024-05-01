@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FaArrowLeft, FaPlusCircle } from "react-icons/fa"
+import { FaPlusCircle } from "react-icons/fa"
 import Papa from 'papaparse'
 import './styles/food.css'
 
@@ -20,21 +20,20 @@ const Food = () => {
     return (
         <div className='page'>
             <div className="header">
-                <button type="button" className='header-back-btn'> <FaArrowLeft className='icon'/> </button>
                 <h2>Foods</h2>
             </div>
 
             <div id="food-list">
                 {foods.map((food, index) => (
-                    <div key={index} className="food-item">
+                    <div key={index} className="food-item container">
                         <img src={food.imageUrl} alt={food.name} className="food-icon" />
                         <div className="food-detilas">
                             <h4>{food.name}</h4>
                             <div className="food-macros">
-                                <p>Calories: {food.calories}</p>
-                                <p>Carbs: {food.carbs}g</p>
-                                <p>Fat: {food.fat}g</p>
-                                <p>Protein: {food.protein}g</p>
+                                <p>Cal: {food.calories},</p>
+                                <p>Carb: {food.carbs}g,</p>
+                                <p>Fat: {food.fat}g,</p>
+                                <p>Pro: {food.protein}g</p>
                             </div>
                         </div>
                         <button className="add-food-btn">

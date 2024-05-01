@@ -44,6 +44,7 @@ button {
     background-color: var(--bg-alt);
     border-radius: 0.5rem;
     color: var(--text);
+    font-family: inherit;
 }
 .text-input::placeholder {
     color: var(--text-alt);
@@ -81,6 +82,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     gap: 0.5rem;
 }
 
@@ -100,6 +102,7 @@ button {
     width: 100vw;
     text-align: center;
     padding: 1rem;
+    border-radius: 0 0 2rem 2rem;
 }
 
 .header-back-btn {
