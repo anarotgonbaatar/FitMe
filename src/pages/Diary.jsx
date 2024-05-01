@@ -1,12 +1,14 @@
 import React from 'react'
 import './styles/diary.css'
 import { useFoodDiary } from '../contexts/FoodDiaryContext'
+import { useExerciseDiary } from '../contexts/ExerciseDiaryContext'
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
 import { TiDelete } from "react-icons/ti"
 import { useNavigate } from 'react-router-dom'
 
 const Diary = () => {
     const { foodsEaten, removeFood } = useFoodDiary()
+    const { exercisesDone, removeExercise } = useExerciseDiary()
     const navigate = useNavigate()
 
     const totalCalories = foodsEaten.reduce((acc, food) => acc + Number(food.calories), 0)
@@ -14,11 +16,13 @@ const Diary = () => {
     const totalFats = foodsEaten.reduce((acc, food) => acc + Number(food.fat), 0).toFixed(1)
     const totalProteins = foodsEaten.reduce((acc, food) => acc + Number(food.protein), 0).toFixed(1)
 
+    const totalCaloriesBurned = exercisesDone.reduce((acc, exercise) => acc + Number(exercise.calories), 0)
+
     const handleAddFoodClick = () => {
         navigate('/foods');  // Navigate to the Foods page
     }
     const handleAddExerciseClick = () => {
-        navigate('/Workout');
+        navigate('/exercises');
     }
 
     return (
@@ -65,17 +69,17 @@ const Diary = () => {
             <div className="container">
                 <div className="row">
                     <h4>Exercises</h4>
-                    Total Calories Burned: {totalCalories}
+                    Total Calories Burned: {totalCaloriesBurned}
                 </div>
 
                 <div className="column" id='diary-food-list'>
-                    {foodsEaten.map((food, index) => (
+                    {exercisesDone.map((exercise, index) => (
                         <div key={index} className='row diary-food-item'>
                             <div>
-                                {food.name}
+                                {exercise.name}
                             </div>
                             <div className='food-item-details'>
-                                {food.calories} Cal <TiDelete className='icon delete-icon' onClick={() => removeFood(index)}/>
+                                {exercise.calories} Cal <TiDelete className='icon delete-icon' onClick={() => removeExercise(index)}/>
                             </div>
                         </div>
                     ))}

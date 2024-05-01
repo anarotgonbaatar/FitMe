@@ -1,4 +1,4 @@
-#food-list {
+#exercises-list{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -6,29 +6,31 @@
     align-items: center;
 }
 
-.food-item {
-    display: flex; flex-direction: row;
+.exercise-item{
+    display: inherit;
+    flex-direction: row;
     position: relative;
     align-items: center;
 }
 
-.food-icon {
+.exercise-icon{
     max-width: 3rem;
     height: auto;
     border-radius: 0.5rem;
 }
 
-.food-details {
+.exercise-details {
     display: flex; flex-direction: column;
+    gap: 0.25rem;
 }
 
-.food-macros {
+.exercise-types {
     display: flex; flex-direction: row;
     justify-content: space-between;
     gap: 0.5rem;
 }
 
-.add-food-btn {
+.add-exercise-btn {
     position: absolute;
     right: 1rem;
 }

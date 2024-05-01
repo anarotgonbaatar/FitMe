@@ -1,6 +1,6 @@
 name,calories,carbs,fat,protein,imageUrl
-Apple,95,25,0,1,/images/apple.png
-Banana,110,28,0,1,/images/banana.png
-Beef,265,0,19,21,/images/beef.png
-Broccoli,35,5.6,0.3,2.3,/images/broccoli.png
-Chicken Breast,165,0,3.6,31,/images/chicken-breast.png
+Apple,95,25,0,1,/images/foods/apple.png
+Banana,110,28,0,1,/images/foods/banana.png
+Beef,265,0,19,21,/images/foods/beef.png
+Broccoli,35,5.6,0.3,2.3,/images/foods/broccoli.png
+Chicken Breast,165,0,3.6,31,/images/foods/chicken-breast.png

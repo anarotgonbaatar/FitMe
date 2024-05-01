@@ -29,7 +29,7 @@ const Foods = () => {
                 {foods.map((food, index) => (
                     <div key={index} className="food-item container">
                         <img src={food.imageUrl} alt={food.name} className="food-icon" />
-                        <div className="food-detilas">
+                        <div className="food-details">
                             <h4>{food.name}</h4>
                             <div className="food-macros">
                                 <p>Cal: {food.calories},</p>
