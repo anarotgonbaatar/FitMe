@@ -1,0 +1,36 @@
+.progress-bar {
+    width: 50%;
+    border-radius: 20px;
+    height: 20px;  /* Set height of progress bar */
+    display: flex; /* Flexbox to center content */
+    align-items: center; /* Align text vertically */
+    justify-content: center; /* Align text horizontally */
+    position: relative; /* For stacking and positioning */
+    background-color: var(--bg); /* Default background */
+}
+
+.progress-bar span {
+    color: inherit;
+    z-index: 1;
+}
+
+.progress-bar::before {
+    content: '';
+    background-color: var(--primary);
+    width: 50%; /* Progress width */
+    height: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.stats-row {
+    gap: 2rem;
+}
+.stats-col {
+    width: 100%;
+}
+.stats-col .row {
+    width: 100%;
+}

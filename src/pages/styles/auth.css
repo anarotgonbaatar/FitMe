@@ -1,0 +1,53 @@
+#auth-page {
+    background-color: var(--primary);
+    height: 100vh;
+}
+
+#title-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5rem 0 5rem 0;
+}
+#title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+#subtitle {
+    font-size: 1.25rem;
+}
+
+#tab-container {
+    display: inherit; flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 30rem;
+    background-color: var(--bg);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+#tab-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.tab-btn {
+    color: inherit;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    border-radius: 0.5rem;
+}
+.tab-btn.active {
+    background-color: var(--bg-alt);
+}
+
+.tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
