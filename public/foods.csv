@@ -1,0 +1,5 @@
+name,calories,carbs,fat,protein,imageUrl
+Apple,95,25g,0.3g,0.5g,https://example.com/images/apple.png
+Banana,105,27g,0.3g,1.3g,https://example.com/images/banana.png
+Chicken Breast,165,0g,3.6g,31g,https://example.com/images/chicken.png
+Broccoli,31,6g,0.4g,2.5g,https://example.com/images/broccoli.png

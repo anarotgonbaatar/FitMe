@@ -1,0 +1,19 @@
+#food-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.food-item {
+    display: flex; flex-direction: row;
+}
+
+.food-details {
+    display: flex; flex-direction: column;
+}
+
+.food-macros {
+    display: flex; flex-direction: row;
+    justify-content: space-between;
+}
