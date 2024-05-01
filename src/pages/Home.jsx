@@ -47,22 +47,22 @@ const Dashboard = () => {
             </div>
 
             {/* Macros Container */}
-            <div class="container">
-                <div class="row">
+            <div className="container">
+                <div className="row">
                     <label>Calories Remaining</label>
-                    <div id='cal-progress-bar' class="progress-bar"><span>1000</span></div>
+                    <div id='cal-progress-bar' className="progress-bar"><span>1000</span></div>
                 </div>
-                <div class="row">
+                <div className="row">
                     <label>Carbohydrates</label>
-                    <div id='carb-progress-bar' class="progress-bar"><span>1000</span></div>
+                    <div id='carb-progress-bar' className="progress-bar"><span>1000</span></div>
                 </div>
-                <div class="row">
+                <div className="row">
                     <label>Fat</label>
-                    <div id='fat-progress-bar' class="progress-bar"><span>1000</span></div>
+                    <div id='fat-progress-bar' className="progress-bar"><span>1000</span></div>
                 </div>
-                <div class="row">
+                <div className="row">
                     <label>Protein</label>
-                    <div id='protien-progress-bar' class="progress-bar"><span>1000</span></div>
+                    <div id='protien-progress-bar' className="progress-bar"><span>1000</span></div>
                 </div>
             </div>
 

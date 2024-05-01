@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { FaPlusCircle } from "react-icons/fa"
 import Papa from 'papaparse'
-import './styles/food.css'
+import './styles/foods.css'
+import { useFoodDiary } from '../contexts/FoodDiaryContext'
 
-const Food = () => {
-    const [foods, setFoods] = useState([]);
+const Foods = () => {
+    const [foods, setFoods] = useState([])
+    const { addFood } = useFoodDiary()
 
     useEffect(() => {
         Papa.parse(`${process.env.PUBLIC_URL}/foods.csv`, {
@@ -31,12 +33,12 @@ const Food = () => {
                             <h4>{food.name}</h4>
                             <div className="food-macros">
                                 <p>Cal: {food.calories},</p>
-                                <p>Carb: {food.carbs}g,</p>
-                                <p>Fat: {food.fat}g,</p>
-                                <p>Pro: {food.protein}g</p>
+                                <p>C: {food.carbs} g,</p>
+                                <p>F: {food.fat} g,</p>
+                                <p>P: {food.protein} g</p>
                             </div>
                         </div>
-                        <button className="add-food-btn">
+                        <button className="add-food-btn" onClick={() => addFood(food)}>
                             <FaPlusCircle className='icon'/>
                         </button>
                     </div>
@@ -46,4 +48,4 @@ const Food = () => {
     )
 }
 
-export default Food
+export default Foods

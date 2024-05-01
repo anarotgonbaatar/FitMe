@@ -5,7 +5,7 @@ import { FaGear } from "react-icons/fa6"
 import { GoGoal } from "react-icons/go"
 import { TbLogout2 } from "react-icons/tb"
 import { useNavigate } from 'react-router-dom'
-import { useUser } from '../UserContext'
+import { useUser } from '../contexts/UserContext'
 
 const Profile = () => {
     const { user, setUser } = useUser();
@@ -31,42 +31,42 @@ const Profile = () => {
                 <h3>Settings</h3>
 
                 <div className="row">
-                    <div className="row">
+                    <div className="row settings-item">
                         <GoGoal className='icon'/>
                         <span>Goals</span>
                     </div>
                     <FaAngleRight className='icon'/>
                 </div>
                 <div className="row">
-                    <div className="row">
+                    <div className="row settings-item">
                         <FaChartLine className='icon'/>
                         <span>Progress</span>
                     </div>
                     <FaAngleRight className='icon'/>
                 </div>
                 <div className="row">
-                    <div className="row">
+                    <div className="row settings-item">
                         <FaWeight className='icon'/>
                         <span>Measurements</span>
                     </div>
                     <FaAngleRight className='icon'/>
                 </div>
                 <div className="row">
-                    <div className="row">
+                    <div className="row settings-item">
                         <FaRunning className='icon'/>
                         <span>Exercises</span>
                     </div>
                     <FaAngleRight className='icon'/>
                 </div>
                 <div className="row">
-                    <div className="row">
+                    <div className="row settings-item">
                         <FaGear className='icon'/>
                         <span>Settings</span>
                     </div>
                     <FaAngleRight className='icon'/>
                 </div>
                 <div className="row" onClick={handleLogout}>
-                    <div className="row">
+                    <div className="row settings-item">
                         <TbLogout2 className='icon'/>
                         <span id='log-out-txt'>Log out</span>
                     </div>

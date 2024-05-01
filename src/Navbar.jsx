@@ -19,10 +19,10 @@ const Navbar = () => {
                     <span>Diary</span>
                 </div>
             </NavLink>
-            <NavLink to="/food" className='nav-btn' id='food-btn'>
+            <NavLink to="/foods" className='nav-btn' id='food-btn'>
                 <div className="column">
                     <FaUtensils className='icon'/>
-                    <span>Food</span>
+                    <span>Foods</span>
                 </div>
             </NavLink>
             <NavLink to="/workout" className='nav-btn' id='workout-btn'>

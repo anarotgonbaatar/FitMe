@@ -1,0 +1,28 @@
+#date-changer {
+    width: 100%;
+    max-width: 30rem;
+}
+
+#diary-food-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+}
+
+.diary-food-item {
+    border: 1px solid var(--bg);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+.food-item-details {
+    display: inherit;
+    align-items: center;
+    gap: 0.25rem;
+}
+.delete-icon {
+    width: 1.5rem;
+    height: auto;
+    color: rgb(255, 98, 0);
+}

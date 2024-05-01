@@ -1,5 +1,6 @@
 name,calories,carbs,fat,protein,imageUrl
-Apple,95,25,0.3,0.5,https://example.com/images/apple.png
-Banana,105,27,0.3,1.3,https://example.com/images/banana.png
-Chicken Breast,165,0,3.6,31,https://example.com/images/chicken.png
-Broccoli,31,6,0.4,2.5,https://example.com/images/broccoli.png
+Apple,95,25,0,1,/images/apple.png
+Banana,110,28,0,1,/images/banana.png
+Beef,265,0,19,21,/images/beef.png
+Broccoli,35,5.6,0.3,2.3,/images/broccoli.png
+Chicken Breast,165,0,3.6,31,/images/chicken-breast.png
