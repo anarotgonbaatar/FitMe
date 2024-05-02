@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import './styles/profile.css'
 import { FaAngleRight, FaChartLine, FaWeight, FaRunning } from "react-icons/fa"
 import { FaGear } from "react-icons/fa6"
@@ -10,10 +10,28 @@ import { useUser } from '../contexts/UserContext'
 const Profile = () => {
     const { user, setUser } = useUser();
     const navigate = useNavigate();
+    const [profilePic, setProfilePic] = useState(user ? user.imageUrl : 'default_profile.png');
+    const fileInputRef = useRef(null)
 
     const handleLogout = () => {
         setUser(null); // Clear user in context
         navigate('/auth');
+    };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setProfilePic(reader.result);
+            setUser({...user, imageUrl: reader.result}); // Update user context with new image URL
+        };
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    };
+
+    const handleClick = () => {
+        fileInputRef.current.click(); // Trigger the hidden file input click
     };
 
     return (
@@ -25,6 +43,13 @@ const Profile = () => {
             <div className="row" id='name-container'>
                 <span className='name'>{user ? user.firstName : 'N/A'}</span> 
                 <span className='name'>{user ? user.lastName : 'N/A'}</span>
+            </div>
+
+            {/* Profile picture */}
+            <div className="profile-picture-container column">
+                <img src={profilePic} alt="Profile" className="profile-picture"/>
+                <input type="file" ref={fileInputRef} onChange={handleImageChange} accept="image/*" className="file-input" />
+                <button onClick={handleClick} className="upload-button submit-btn">Change Profile Picture</button>
             </div>
 
             <div className="container" id='settings-container'>

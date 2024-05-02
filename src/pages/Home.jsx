@@ -48,6 +48,12 @@ const Dashboard = () => {
 
             {/* Macros Container */}
             <div className="container">
+            <div className="row">
+                    <span className='section-title'>Macros</span>
+                    <button type="button" className='update-btn' id='stat-update-btn' onClick={handleUpdateClick}>
+                        Update
+                    </button>
+                </div>
                 <div className="row">
                     <label>Calories Remaining</label>
                     <div id='cal-progress-bar' className="progress-bar"><span>1000</span></div>
@@ -69,7 +75,7 @@ const Dashboard = () => {
             {/* Stats Container */}
             <div className="container">
                 <div className="row">
-                    <span className='section-title'>Your Stats</span>
+                    <span className='section-title'>Stats</span>
                     <button type="button" className='update-btn' id='stat-update-btn' onClick={handleUpdateClick}>
                         Update
                     </button>

@@ -1,5 +1,5 @@
 #name-container {
-    height: 5rem;
+    margin-top: 4rem;
     justify-content: center;
 }
 
@@ -15,4 +15,17 @@
 
 .settings-item {
     width: auto;
+}
+
+.profile-picture {
+    width: 10rem;
+    height: auto;
+    border-radius: 1rem;
+    border: 2px solid var(--primary);
+}
+
+.file-input {
+    visibility: hidden;
+    width: 0;
+    height: 0;
 }
