@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './styles/home.css'
 import { useNavigate } from 'react-router-dom'
+import { Line } from 'react-chartjs-2'
+import 'chart.js/auto'
+import 'chartjs-adapter-date-fns'
+import weightHistory from '../data/weightData'
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -40,6 +44,56 @@ const Dashboard = () => {
         navigate('/log-stats');
     };
 
+    // Prepare chart data using imported weightHistory
+    const chartData = {
+        labels: weightHistory.map(data => data.date),
+        datasets: [
+            {
+                label: 'Weight Over Time',
+                data: weightHistory.map(data => data.weight),
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }
+        ]
+    };
+
+    const chartOptions = {
+        scales: {
+            x: {
+                ticks: {
+                    color: '#FFFFFF' // Font color for x-axis tick labels
+                },
+                title: {
+                    display: true,
+                    text: 'Date',
+                    color: '#FFFFFF' // Font color for x-axis title
+                }
+            },
+            y: {
+                ticks: {
+                    color: '#FFFFFF' // Font color for y-axis tick labels
+                },
+                title: {
+                    display: true,
+                    text: 'Weight (lbs)',
+                    color: '#FFFFFF' // Font color for y-axis title
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#FFFFFF' // Font color for legend labels
+                }
+            },
+            tooltip: {
+                titleColor: '#FFFFFF', // Font color for tooltip titles
+                bodyColor: '#FFFFFF'  // Font color for tooltip body
+            }
+        }
+    };
+
     return (
         <div className='page'>
             <div className="header">
@@ -56,19 +110,19 @@ const Dashboard = () => {
                 </div>
                 <div className="row">
                     <label>Calories Remaining</label>
-                    <div id='cal-progress-bar' className="progress-bar"><span>1000</span></div>
+                    <div id='cal-progress-bar' className="progress-bar"><span>3000</span></div>
                 </div>
                 <div className="row">
                     <label>Carbohydrates</label>
-                    <div id='carb-progress-bar' className="progress-bar"><span>1000</span></div>
+                    <div id='carb-progress-bar' className="progress-bar"><span>200</span></div>
                 </div>
                 <div className="row">
                     <label>Fat</label>
-                    <div id='fat-progress-bar' className="progress-bar"><span>1000</span></div>
+                    <div id='fat-progress-bar' className="progress-bar"><span>100</span></div>
                 </div>
                 <div className="row">
                     <label>Protein</label>
-                    <div id='protien-progress-bar' className="progress-bar"><span>1000</span></div>
+                    <div id='protien-progress-bar' className="progress-bar"><span>50</span></div>
                 </div>
             </div>
 
@@ -115,6 +169,43 @@ const Dashboard = () => {
                             <span>Fat Mass</span> <span className="var">{stats.fatMass.toFixed(1) + " lb"}</span>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            {/* Weight Chart Container */}
+            <div className="container">
+                <div className="row">
+                    <span className='section-title'>Weight</span>
+                    <button type="button" className='update-btn' id='stat-update-btn' onClick={handleUpdateClick}>
+                        Update
+                    </button>
+                </div>
+
+                {/* Weight graph/chart */}
+                <div className="row">
+                    <Line data={chartData} options={chartOptions} />
+                </div>
+            </div>
+            {/* Weight Chart Container */}
+            <div className="container">
+                <div className="row">
+                    <span className='section-title'>Heart Health</span>
+                    <button type="button" className='update-btn' id='stat-update-btn' onClick={handleUpdateClick}>
+                        Update
+                    </button>
+                </div>
+
+                <div className="row">
+                    <label>Fat</label>
+                    <div id='fat-progress-bar' className="progress-bar"><span>100 g</span></div>
+                </div>
+                <div className="row">
+                    <label>Sodium</label>
+                    <div id='sodium-progress-bar' className="progress-bar"><span>2300 mg</span></div>
+                </div>
+                <div className="row">
+                    <label>Cholesterol</label>
+                    <div id='cholesterol-progress-bar' className="progress-bar"><span>300 mg</span></div>
                 </div>
             </div>
         </div>

@@ -34,3 +34,7 @@
 .stats-col .row {
     width: 100%;
 }
+
+.weight-chart {
+    color: inherit;
+}
