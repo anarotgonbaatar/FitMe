@@ -1,27 +1,27 @@
-name,type,equipment,imageUrl
-Arnold Press,Shoulders,Dumbbell,/images/exercises/arnold-press.gif
-Bench Press,Chest,Barbell,/images/exercises/barbell-bench-press.gif
-Chest Fly,Chest,Machine,/images/exercises/chest-fly.gif
-Deadlift,Full Body,Barbell
-Elliptical Trainer,Cardio,Machine
-Front Squat,Legs,Barbell
-Glute Bridge,Legs,Bodyweight
-Hip Thrust,Legs,Barbell
-Incline Bench Press,Chest,Barbell
-Jump Squat,Legs,Bodyweight
-Kettlebell Swing,Full Body,Kettlebell
-Lat Pulldown,Back,Cable
-Mountain Climber,Cardio,Bodyweight
-Nordic Curl,Legs,Bodyweight
-Overhead Press,Shoulders,Barbell
-Plank,Core,Bodyweight
-Quad Extension,Legs,Machine
-Rowing,Cardio,Machine
-Squat,Legs,Barbell
-Tricep Dip,Arms,Bodyweight
-Upright Row,Shoulders,Barbell
-V-Up,Core,Bodyweight
-Walking Lunge,Legs,Bodyweight
-X-Trainer,Cardio,Machine
-Yoga Poses,Flexibility,Bodyweight
-Zottman Curl,Arms,Dumbbell
+name                ,type        ,equipment  ,imageUrl
+Arnold Press        ,Shoulders   ,Dumbbell   ,/images/exercises/arnold-press.gif
+Bench Press         ,Chest       ,Barbell    ,/images/exercises/barbell-bench-press.gif
+Chest Fly           ,Chest       ,Machine    ,/images/exercises/chest-fly.gif
+Deadlift            ,Full Body   ,Barbell    ,/images/exercises/barbell-deadlift-movement.webp
+Elliptical Trainer  ,Cardio      ,Machine    ,/images/exercises/elliptical.jep
+Front Squat         ,Legs        ,Barbell    ,/images/exercises/Front_Squats.webp
+Glute Bridge        ,Legs        ,Bodyweight ,/images/exercises/glute_bridge.webp
+Hip Thrust          ,Legs        ,Barbell    ,/images/exercises/hip-thrust-800.jpg
+Incline Bench Press ,Chest       ,Barbell    ,/images/exercises/incline-bench-press-800.jpg
+Jump Squat          ,Legs        ,Bodyweight ,/images/exercises/jump_squat.gif
+Kettlebell Swing    ,Full Body   ,Kettlebell ,/images/exercises/Kettlebell-Swings.gif
+Lat Pulldown        ,Back        ,Cable      ,/images/exercises/lat_pulldown.webp
+Mountain Climber    ,Cardio      ,Bodyweight ,/images/exercises/mountain_climbers.gif
+Nordic Curl         ,Legs        ,Bodyweight ,/images/exercises/nordic_curl.jpeg
+Overhead Press      ,Shoulders   ,Barbell    ,/images/exercises/overhead_press.jpeg
+Plank               ,Core        ,Bodyweight ,/images/exercises/plank.gif
+Quad Extension      ,Legs        ,Machine    ,/images/exercises/quad_extension.jpeg
+Rowing              ,Cardio      ,Machine    ,/images/exercises/rowing.webp
+Squat               ,Legs        ,Barbell    ,/images/exercises/squat.jpeg
+Tricep Dip          ,Arms        ,Bodyweight ,/images/exercises/tricep_dip.jpeg
+Upright Row         ,Shoulders   ,Barbell    ,/images/exercises/upright_row.webp
+V-Up                ,Core        ,Bodyweight
+Walking Lunge       ,Legs        ,Bodyweight ,/images/exercises/walking_lunge.webp
+X-Trainer           ,Cardio      ,Machine
+Yoga Poses          ,Flexibility ,Bodyweight
+Zottman Curl        ,Arms        ,Dumbbell   ,/images/exercises/zottman-curl.gif
