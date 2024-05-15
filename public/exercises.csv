@@ -1,9 +1,9 @@
-name                ,type        ,equipment  ,imageUrl
+name,type,equipment,imageUrl
 Arnold Press        ,Shoulders   ,Dumbbell   ,/images/exercises/arnold-press.gif
 Bench Press         ,Chest       ,Barbell    ,/images/exercises/barbell-bench-press.gif
 Chest Fly           ,Chest       ,Machine    ,/images/exercises/chest-fly.gif
 Deadlift            ,Full Body   ,Barbell    ,/images/exercises/barbell-deadlift-movement.webp
-Elliptical Trainer  ,Cardio      ,Machine    ,/images/exercises/elliptical.jep
+Elliptical Trainer  ,Cardio      ,Machine    ,/images/exercises/elliptical.jpeg
 Front Squat         ,Legs        ,Barbell    ,/images/exercises/Front_Squats.webp
 Glute Bridge        ,Legs        ,Bodyweight ,/images/exercises/glute_bridge.webp
 Hip Thrust          ,Legs        ,Barbell    ,/images/exercises/hip-thrust-800.jpg
